@@ -58,6 +58,8 @@ jobs:
 
     - name: Create GitHub Release
       uses: actions/create-release@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
       with:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
@@ -65,13 +67,13 @@ jobs:
           Automatic Release
         draft: false
         prerelease: false
-        token: ${{ secrets.PAT }}
 
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./release/${{ matrix.OUT_FILE_NAME }}
         asset_name: ${{ matrix.OUT_FILE_NAME }}
         asset_content_type: ${{ matrix.ASSET_MIME }}
-        token: ${{ secrets.PAT }}

@@ -61,10 +61,10 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        tag_name: latest
+        release_name: Latest version
         body: |
-          Automatic Release
+          Automatic release latest version
         draft: false
         prerelease: false
 

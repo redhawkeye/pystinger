@@ -6,8 +6,6 @@
 # @Author: funnywolf
 # @Contact : github.com/FunnyWolf
 
-########### only for python2.7 because pyinstaller
-
 import os
 import threading
 import time

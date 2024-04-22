@@ -17,8 +17,13 @@ jobs:
         include:
           - os: windows-latest
             TARGET: windows
-            CMD_BUILD: pyinstaller -F -w -n server -i .github/images/icon.ico stinger_server.py
+            CMD_BUILD: pyinstaller -F -w -n server -i .github/images/icon.ico server.py
             OUT_FILE_NAME: server.exe
+            ASSET_MIME: application/vnd.microsoft.portable-executable
+          - os: windows-latest
+            TARGET: windows
+            CMD_BUILD: pyinstaller -F -w -n client -i .github/images/icon.ico client.py
+            OUT_FILE_NAME: client.exe
             ASSET_MIME: application/vnd.microsoft.portable-executable
     steps:
     - uses: actions/checkout@v1
@@ -38,7 +43,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
       with:
-        upload_url: ${{ steps.get_release_info.outputs.upload_url }}
+        # upload_url: ${{ steps.get_release_info.outputs.upload_url }}
         asset_path: ./dist/${{ matrix.OUT_FILE_NAME}}
         asset_name: ${{ matrix.OUT_FILE_NAME}}
         asset_content_type: ${{ matrix.ASSET_MIME}}

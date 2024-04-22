@@ -1,6 +1,6 @@
 # pystinger
 
-English | [简体中文](./readme_cn.md) 
+English | [简体中文](./.github/docs/readme_cn.md) 
 
 Pystinger implements **SOCK4 proxy** and **port mapping** through webshell.
 
@@ -158,5 +158,5 @@ The development is supported by the software from jetbrains.</br>
 https://www.jetbrains.com/?from=pystinger
 
 <a href="https://www.jetbrains.com/?from=pystinger" target="_blank">
-  <img src="jetbrains.svg">
+  <img src=".github/images/jetbrains.svg">
 </a>

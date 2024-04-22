@@ -19,10 +19,12 @@ jobs:
             TARGET: ubuntu
             CMD_BUILD: pyinstaller -F --clean -n server server.py
             OUT_FILE_NAME: server
+            ASSET_MIME: application/binary
           - os: ubuntu-latest
             TARGET: ubuntu
             CMD_BUILD: pyinstaller -F --clean -n client client.py
             OUT_FILE_NAME: client
+            ASSET_MIME: application/binary
           - os: windows-latest
             TARGET: windows
             CMD_BUILD: pyinstaller -F --clean -w -n server -i .github/images/icon.ico server.py

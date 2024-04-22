@@ -50,12 +50,12 @@ jobs:
       run: ${{matrix.CMD_BUILD}}
 
     - name: Validate package for ${{matrix.TARGET}}
-      run: ./dist/${{ matrix.TARGET }}/${{matrix.OUT_FILE_NAME}}
+      run: ./dist/${{matrix.OUT_FILE_NAME}}
 
     - uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.OUT_FILE_NAME }}
-        path: ./dist/${{ matrix.TARGET }}/${{ matrix.OUT_FILE_NAME }}
+        path: ./dist/${{ matrix.OUT_FILE_NAME }}
 
     # - name: Upload Release Asset
     #   id: upload-release-asset

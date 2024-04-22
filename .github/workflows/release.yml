@@ -65,6 +65,7 @@ jobs:
           Automatic Release
         draft: false
         prerelease: false
+        token: ${{ secrets.PAT }}
 
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
@@ -73,3 +74,4 @@ jobs:
         asset_path: ./release/${{ matrix.OUT_FILE_NAME }}
         asset_name: ${{ matrix.OUT_FILE_NAME }}
         asset_content_type: ${{ matrix.ASSET_MIME }}
+        token: ${{ secrets.PAT }}

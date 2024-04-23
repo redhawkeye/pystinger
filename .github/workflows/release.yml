@@ -1,12 +1,9 @@
 name: Build Release
 
 on:
-  workflow_dispatch:
-    inputs:
-      release:
-        description: 'Do you want to release this commit?'     
-        required: true
-        default: 'yes'
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -60,7 +57,6 @@ jobs:
       run: ${{matrix.CMD_BUILD}}
 
     - name: Upload Release Asset
-      if: ${{ github.event.inputs.release == 'yes' }}
       uses: softprops/action-gh-release@v2
       with:
         make_latest: true

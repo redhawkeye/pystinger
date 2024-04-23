@@ -17,12 +17,12 @@
 
 
 * proxy.jsp上传到目标服务器,确保 [http://example.com:8080/proxy.jsp](http://example.com:8080/proxy.jsp) 可以访问,页面返回 ```UTF-8```
-* 将stinger_server.exe上传到目标服务器,蚁剑/冰蝎执行```start D:/XXX/stinger_server.exe```启动服务端
-> 不要直接运行D:/XXX/stinger_server.exe,会导致tcp断连
-* vps执行```./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000```
+* 将server.exe上传到目标服务器,蚁剑/冰蝎执行```start D:/XXX/server.exe```启动服务端
+> 不要直接运行D:/XXX/server.exe,会导致tcp断连
+* vps执行```./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000```
 * 如下输出表示成功
 ```
-root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
+root@kali:~# ./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
 2020-01-06 21:12:47,673 - INFO - 619 - Local listen checking ...
 2020-01-06 21:12:47,674 - INFO - 622 - Local listen check pass
 2020-01-06 21:12:47,674 - INFO - 623 - Socks4a on 127.0.0.1:60000
@@ -53,12 +53,12 @@ root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 
 ## cobalt strike单主机上线
 
 * proxy.jsp上传到目标服务器,确保 [http://example.com:8080/proxy.jsp](http://example.com:8080/proxy.jsp) 可以访问,页面返回 ```UTF-8```
-* 将stinger_server.exe上传到目标服务器,蚁剑/冰蝎执行```start D:/XXX/stinger_server.exe```启动服务端
-> 不要直接运行D:/XXX/stinger_server.exe,会导致tcp断连
-* stinger_client命令行执行```./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000```
+* 将server.exe上传到目标服务器,蚁剑/冰蝎执行```start D:/XXX/server.exe```启动服务端
+> 不要直接运行D:/XXX/server.exe,会导致tcp断连
+* client命令行执行```./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000```
 * 如下输出表示成功
 ```
-root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
+root@kali:~# ./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
 2020-01-06 21:12:47,673 - INFO - 619 - Local listen checking ...
 2020-01-06 21:12:47,674 - INFO - 622 - Local listen check pass
 2020-01-06 21:12:47,674 - INFO - 623 - Socks4a on 127.0.0.1:60000
@@ -89,12 +89,12 @@ root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 
 ## cobalt strike多主机上线
 
 * proxy.jsp上传到目标服务器,确保 [http://example.com:8080/proxy.jsp](http://example.com:8080/proxy.jsp) 可以访问,页面返回 ```UTF-8```
-* 将stinger_server.exe上传到目标服务器,蚁剑/冰蝎执行```start D:/XXX/stinger_server.exe 192.168.3.11```启动服务端
+* 将server.exe上传到目标服务器,蚁剑/冰蝎执行```start D:/XXX/server.exe 192.168.3.11```启动服务端
 > 192.168.3.11可以改成0.0.0.0
-* stinger_client命令行执行```./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000```
+* client命令行执行```./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000```
 * 如下输出表示成功
 ```
-root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
+root@kali:~# ./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
 2020-01-06 21:12:47,673 - INFO - 619 - Local listen checking ...
 2020-01-06 21:12:47,674 - INFO - 622 - Local listen check pass
 2020-01-06 21:12:47,674 - INFO - 623 - Socks4a on 127.0.0.1:60000
@@ -141,7 +141,7 @@ root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 
 [https://github.com/SECFORCE/Tunna](https://github.com/SECFORCE/Tunna)
 
 # 已测试
-## stinger_server\stinger_client
+## server\client
 * windows 
 * linux
 ## proxy.jsp(x)/php/aspx
@@ -164,5 +164,5 @@ The development is supported by the software from jetbrains.</br>
 https://www.jetbrains.com/?from=pystinger
 
 <a href="https://www.jetbrains.com/?from=pystinger" target="_blank">
-  <img src="jetbrains.svg">
+  <img src=".github/images/jetbrains.svg">
 </a>

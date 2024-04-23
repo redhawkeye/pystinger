@@ -745,9 +745,9 @@ if __name__ == '__main__':
     globalClientCenter.logger.info("------------------! RAT Config !------------------\n")
 
     # 设置线程为守护线程
-    globalClientCenter.setDaemon(True)
+    # globalClientCenter.setDaemon(True)
     t2 = Socks4aProxy(host=args.locallistenaddress, port=args.locallistenport, timeout=sockettimeout)
-    t2.setDaemon(True)
+    # t2.setDaemon(True)
 
     # 启动服务
     globalClientCenter.start()

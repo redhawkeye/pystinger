@@ -6,13 +6,15 @@
 # @Author: funnywolf
 # @Contact : github.com/FunnyWolf
 
-########### only for python2.7 because pyinstaller
-
 import os
 import threading
 import time
-from SocketServer import BaseRequestHandler
-from SocketServer import ThreadingTCPServer
+try:
+    from SocketServer import BaseRequestHandler
+    from SocketServer import ThreadingTCPServer
+except:
+    from socketserver import BaseRequestHandler
+    from socketserver import ThreadingTCPServer
 from socket import AF_INET, SOCK_STREAM
 from threading import Thread
 
@@ -474,7 +476,7 @@ if __name__ == '__main__':
     try:
         # 主控Web服务
         webthread = ControlCenter()
-        webthread.setDaemon(True)
+        # webthread.setDaemon(True)
         webthread.start()
         # 反向mirror服务
         webserver = ThreadingTCPServer((MIRROR_LISTEN.split(":")[0], int(MIRROR_LISTEN.split(":")[1])),

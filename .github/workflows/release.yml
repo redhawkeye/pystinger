@@ -60,6 +60,7 @@ jobs:
       run: ${{matrix.CMD_BUILD}}
 
     - name: Upload Release Asset
+      if: ${{ github.event.inputs.release == 'yes' }}
       uses: softprops/action-gh-release@v2
       with:
         make_latest: true

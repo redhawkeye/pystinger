@@ -1,12 +1,12 @@
 name: Build Release
 
 on:
-  push:
-    branches:
-      - devel
-      - master
-    tags:
-      - latest
+  workflow_dispatch:
+    inputs:
+      release:
+        description: 'Do you want to release this commit?'     
+        required: true
+        default: 'yes'
 
 jobs:
   build:

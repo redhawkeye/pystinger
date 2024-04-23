@@ -59,16 +59,10 @@ jobs:
     - name: Build with pyinstaller for ${{matrix.TARGET}}
       run: ${{matrix.CMD_BUILD}}
 
-    # - name: Upload Release Asset
-    #   uses: softprops/action-gh-release@v2
-    #   with:
-    #     make_latest: true
-    #     tag_name: latest
-    #     files: |
-    #       ./dist/${{ matrix.OUT_FILE_NAME}}
-
     - name: Upload Release Asset
-      uses: ncipollo/release-action@v1
+      uses: softprops/action-gh-release@v2
       with:
-        tag: latest
-        artifacts: "dist/${{ matrix.OUT_FILE_NAME}}"
+        make_latest: true
+        tag_name: latest
+        files: |
+          ./dist/${{ matrix.OUT_FILE_NAME}}

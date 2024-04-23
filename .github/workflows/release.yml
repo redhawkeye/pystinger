@@ -106,9 +106,9 @@ jobs:
       run: ${{matrix.CMD_BUILD}}
 
     - name: Upload Release Asset
-        uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          make_latest: true
-          files: |
-            ./dist/${{ matrix.OUT_FILE_NAME}}
+      uses: softprops/action-gh-release@v2
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        make_latest: true
+        files: |
+          ./dist/${{ matrix.OUT_FILE_NAME}}

@@ -70,4 +70,5 @@ jobs:
     - name: Upload Release Asset
       uses: ncipollo/release-action@v1
       with:
+        tag: latest
         artifacts: "dist/${{ matrix.OUT_FILE_NAME}}"

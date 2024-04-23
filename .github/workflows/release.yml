@@ -29,13 +29,13 @@ jobs:
 
           - os: windows-latest
             TARGET: windows
-            CMD_BUILD: pyinstaller -F --clean -w -n server -i .github/images/icon.ico server.py
+            CMD_BUILD: pyinstaller -F --clean -n server -i .github/images/icon.ico server.py
             OUT_FILE_NAME: server.exe
             ASSET_MIME: application/vnd.microsoft.portable-executable
 
           - os: windows-latest
             TARGET: windows
-            CMD_BUILD: pyinstaller -F --clean -w -n client -i .github/images/icon.ico client.py
+            CMD_BUILD: pyinstaller -F --clean -n client -i .github/images/icon.ico client.py
             OUT_FILE_NAME: client.exe
             ASSET_MIME: application/vnd.microsoft.portable-executable
 

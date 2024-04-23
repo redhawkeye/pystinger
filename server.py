@@ -9,21 +9,19 @@
 import os
 import threading
 import time
+from socket import AF_INET, SOCK_STREAM
+from threading import Thread
+from bottle import request, route, run as bottle_run
+from config import *
+
 try:
     from SocketServer import BaseRequestHandler
     from SocketServer import ThreadingTCPServer
 except:
     from socketserver import BaseRequestHandler
     from socketserver import ThreadingTCPServer
-from socket import AF_INET, SOCK_STREAM
-from threading import Thread
-
-from bottle import request, route, run as bottle_run
-
-from config import *
 
 global serverGlobal
-
 
 def handle_socks_data(server_socket_conn, tcp_send_data, client_address):
     # 发送数据

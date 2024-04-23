@@ -10,11 +10,9 @@ import argparse
 import struct
 import threading
 import time
+import ipaddr
 from socket import AF_INET, SOCK_STREAM
 from threading import Thread
-
-import ipaddr
-
 from config import *
 
 try:
@@ -22,11 +20,9 @@ try:
     from requests.packages.urllib3.exceptions import InsecureRequestWarning
 except Exception as E:
     import urllib3
-
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 global globalClientCenter
-
 
 class ClientCenter(threading.Thread):
     def __init__(self):

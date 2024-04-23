@@ -18,8 +18,8 @@ jobs:
       uses: actions/checkout@v4
 
     - uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      with:
+        node-version: 20
 
     - name: Delete Release
       run: |
@@ -89,8 +89,8 @@ jobs:
     - uses: actions/checkout@v4
 
     - uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      with:
+        node-version: 20
 
     - name: Set up Python 3.8
       uses: actions/setup-python@v2

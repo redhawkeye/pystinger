@@ -164,5 +164,5 @@ The development is supported by the software from jetbrains.</br>
 https://www.jetbrains.com/?from=pystinger
 
 <a href="https://www.jetbrains.com/?from=pystinger" target="_blank">
-  <img src=".github/images/jetbrains.svg">
+  <img src="../images/jetbrains.svg">
 </a>

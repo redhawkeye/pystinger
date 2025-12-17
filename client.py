@@ -11,16 +11,14 @@ import struct
 import threading
 import time
 import ipaddr
+import requests
+import urllib3
 from socket import AF_INET, SOCK_STREAM
 from threading import Thread
 from config import *
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
-try:
-    import requests
-    from requests.packages.urllib3.exceptions import InsecureRequestWarning
-except Exception as E:
-    import urllib3
-    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 global globalClientCenter
 
